@@ -1,15 +1,17 @@
-VERSION=$(shell git describe --tags --match=v* --always --dirty)
+KUBELET_VERSION=v1.18.12
 
-LOCAL_REPO?=poseidon/kubelet
-IMAGE_REPO?=quay.io/poseidon/kubelet
+IMAGE_NAME=kubelet
+REPO=k1slow
 
-image: \
-	image-amd64 \
-	image-arm64
+.PHONY: help build push all
 
-image-%:
-	buildah bud -f Dockerfile.$* \
-		-t $(LOCAL_REPO):$(VERSION)-$* \
-		--arch $* --override-arch $* \
-		--format=docker .
+help:
+	    @echo "Makefile commands:"
+	    @echo "build"
+	    @echo "push"
 
+build:
+		@docker build -t $(REPO)/$(IMAGE_NAME):$(KUBELET_VERSION) -f Dockerfile .
+
+push:
+		@docker push $(REPO)/$(IMAGE_NAME):$(KUBELET_VERSION)
