@@ -1,18 +1,14 @@
-# Kubelet [![Docker Repository on Quay](https://quay.io/repository/poseidon/kubelet/status "Image Repository on Quay")](https://quay.io/repository/poseidon/kubelet) [![Dockerhub](https://img.shields.io/badge/container-dockerhub-blue)](https://hub.docker.com/r/psdn/kubelet)
+# Kubelet [![Dockerhub](https://img.shields.io/badge/container-dockerhub-blue)](https://hub.docker.com/r/k1slow/kubelet)
 
 `kubelet` provides a [container image](https://quay.io/repository/poseidon/kubelet) packaging the upstream Kubernetes `kubelet` and dependencies, for use on container-optimized OS distributions. `kubelet` is a component of the [Typhoon](https://github.com/poseidon/typhoon) Kubernetes distribution.
 
 ## Repositories
 
-Typhoon publishes Kubelet container images to repositories ([detailed policy](https://typhoon.psdn.io/topics/security/#container-images)).
+This kubelet image is useful for bare-metal k8s infrastructures running the latest k8s v1.18.x version (v.18.12).
 
-* [quay.io/poseidon/kubelet](https://quay.io/repository/poseidon/kubelet) (official)
-* [docker.io/psdn/kubelet](https://hub.docker.com/repository/docker/psdn/kubelet) (fallback)
+Info: It supports amd64 only
 
-Two tag styles indicate the build strategy:
-
-* Single and multi-arch images are published by Typhoon infrastructure (e.g. `v1.18.4`, `v1.18.4-amd64`, `v1.18.4-arm64`)
-* Quay or Docker autobuilt images (e.g. `build-SHA` on Quay, `release-TAG` on Dockerhub)
+* [docker.io/k1slow/kubelet](https://hub.docker.com/repository/docker/k1slow/kubelet)
 
 ## Packages
 
